@@ -18,10 +18,10 @@ const images = [
 function App() {
   return (
     <div className="App">
-      <Carousel startimage={images[0]}>
+      <Carousel startimage={images[0]} data={images}>
         <Image></Image>
-        <CarouselButton text="<-"></CarouselButton>
-        <CarouselButton text="->"></CarouselButton>
+        <CarouselButton text="<-" action="previous"></CarouselButton>
+        <CarouselButton text="->" action="next"></CarouselButton>
       </Carousel>
     </div>
   );
