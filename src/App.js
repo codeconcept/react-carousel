@@ -20,10 +20,14 @@ function App() {
   return (
     <div className="App">
       <Carousel startimage={images[0]} data={images}>
-        <ImageTitle></ImageTitle>
-        <Image></Image>
-        <CarouselButton text="<-" action="previous"></CarouselButton>
-        <CarouselButton text="->" action="next"></CarouselButton>
+        <div className="extra-child-that-unexpectidly-replaces-previous-children">
+          <ImageTitle></ImageTitle>
+          <div className="extra-child-that-unexpectidly-replaces-previous-children">
+            <Image></Image>
+          </div>
+          <CarouselButton text="<-" action="previous"></CarouselButton>
+          <CarouselButton text="->" action="next"></CarouselButton>
+        </div>
       </Carousel>
     </div>
   );

@@ -1,12 +1,23 @@
 import React from "react";
+import CarouselContext from "./CarouselContext";
 
 class CarouselButton extends React.Component {
   render() {
-    const handleClick =
-      this.props.action === "next"
-        ? this.props.setNextImage
-        : this.props.setPreviousImage;
-    return <button onClick={handleClick}>{this.props.text}</button>;
+    return (
+      <CarouselContext.Consumer>
+        {value => (
+          <button
+            onClick={
+              value.action === "next"
+                ? value.setNextImage
+                : value.setPreviousImage
+            }
+          >
+            {this.props.text}
+          </button>
+        )}
+      </CarouselContext.Consumer>
+    );
   }
 }
 

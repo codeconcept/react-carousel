@@ -1,8 +1,13 @@
 import React from "react";
+import CarouselContext from "./CarouselContext";
 
 class ImageTitle extends React.Component {
   render() {
-    return <h3>{this.props.image.title}</h3>;
+    return (
+      <CarouselContext.Consumer>
+        {value => <h3>{value.image.title}</h3>}
+      </CarouselContext.Consumer>
+    );
   }
 }
 

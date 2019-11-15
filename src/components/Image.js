@@ -1,13 +1,17 @@
 import React from "react";
+import CarouselContext from "./CarouselContext";
 
 class Image extends React.Component {
   render() {
-    const { image } = this.props;
     return (
-      <>
-        <img src={image.url} alt={image.title} />
-        <br />
-      </>
+      <CarouselContext.Consumer>
+        {value => (
+          <>
+            <img src={value.image.url} alt={value.image.title} />
+            <br />
+          </>
+        )}
+      </CarouselContext.Consumer>
     );
   }
 }
