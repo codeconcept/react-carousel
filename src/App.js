@@ -3,6 +3,7 @@ import "./App.css";
 import Carousel from "./components/Carousel";
 import Image from "./components/Image";
 import CarouselButton from "./components/CarouselButton";
+import ImageTitle from "./components/ImageTitle";
 
 const images = [
   {
@@ -19,6 +20,7 @@ function App() {
   return (
     <div className="App">
       <Carousel startimage={images[0]} data={images}>
+        <ImageTitle></ImageTitle>
         <Image></Image>
         <CarouselButton text="<-" action="previous"></CarouselButton>
         <CarouselButton text="->" action="next"></CarouselButton>

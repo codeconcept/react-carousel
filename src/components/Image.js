@@ -5,7 +5,6 @@ class Image extends React.Component {
     const { image } = this.props;
     return (
       <>
-        <h3>{image.title}</h3>
         <img src={image.url} alt={image.title} />
         <br />
       </>
