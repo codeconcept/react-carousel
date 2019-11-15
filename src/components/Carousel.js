@@ -14,7 +14,13 @@ class Carousel extends React.Component {
           this.setState({ currentImage: this.state.images[nextImageId - 1] });
         },
         setPreviousImage: () => {
-          console.log("todo setPreviousImage");
+          let previousImageId = this.state.currentImage.id - 1;
+          if (previousImageId === 0) {
+            previousImageId = this.state.images.length;
+          }
+          this.setState({
+            currentImage: this.state.images[previousImageId - 1]
+          });
         }
       });
     });
