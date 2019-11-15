@@ -5,7 +5,7 @@ class ImageTitle extends React.Component {
   render() {
     return (
       <CarouselContext.Consumer>
-        {value => <h3>{value.image.title}</h3>}
+        {value => <h3>{value.isLoading ? "loading..." : value.image.title}</h3>}
       </CarouselContext.Consumer>
     );
   }

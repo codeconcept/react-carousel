@@ -7,7 +7,16 @@ class Image extends React.Component {
       <CarouselContext.Consumer>
         {value => (
           <>
-            <img src={value.image.url} alt={value.image.title} />
+            <img
+              style={
+                value.isLoading
+                  ? { visibility: "hidden" }
+                  : { visibility: "visible" }
+              }
+              src={value.image.url}
+              alt={value.image.title}
+              onLoad={() => value.setImageLoading(false)}
+            />
             <br />
           </>
         )}
